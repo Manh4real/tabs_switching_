@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css2?family=Lato");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #333;
+  font-family: "Lato", sans-serif;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  margin-top: 2rem;
+}
+.title h1 {
+  letter-spacing: 3.5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-family: "Playfair Display", serif;
+  position: relative;
+}
+.title h1::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background: rgb(255, 207, 143);
+}
+.content-container {
+  display: flex;
+  justify-content: center;
+  /* width: 100%;
+  height: 100%; */
+  padding: 50px 0;
+}
+.image {
+  /* flex: 35%; */
+  width: 400px;
+  height: 300px;
+  margin-right: 3rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* float: left; */
+  border: 6px solid rgb(255, 207, 143);
+  overflow: hidden;
+  border-radius: 20px;
+}
+.content-container .content {
+  width: 500px;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.tabs {
+  display: inline-flex;
+  padding: 15px 0;
+  margin: 0 auto;
+}
+.tab {
+  text-align: center;
+  margin: 0 7.5px;
+  display: inline-block;
+  width: 100px;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #333;
+  background: rgb(250, 250, 155);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.tab.active {
+  background: none;
+  border-bottom: 2px solid #888;
+}
+.tab-content {
+  height: 280px;
+  padding: 2rem;
+  background: whitesmoke;
+}
+.tab-content h2 {
+  font-size: 19px;
+  color: rgb(80, 80, 80);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.tab-content p {
+  font-size: 15px;
+  line-height: 21.5px;
+}
+img {
+  width: 400px;
+  user-select: none;
+  pointer-events: none;
+}
