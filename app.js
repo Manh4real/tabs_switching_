@@ -28,23 +28,22 @@ const contentContainer = document.querySelector(".content-container");
 render(data);
 const curContent = document.querySelector(".content .tab-content");
 const tabsContainer = document.querySelector(".content .tabs");
-const tabs = document.querySelectorAll(".content .tabs .tab");
+const tabs = tabsContainer.querySelectorAll(".tab");
 
 updateTabContent(tabs[0], titles[0]);
 tabsContainer.addEventListener("click", function (e) {
-  if (!e.target.dataset.title) return;
+  let title = e.target.dataset.title;
+  if (!title) return;
   if (e.target.className.includes("active")) return;
 
-  switchTab(e, e.target.dataset.title);
+  switchTab(e, title);
 });
 // <img src="${image}" />
 function render(data) {
   let image = data.image;
   let tabs = (titles = data.content.map((article) => article.title));
   contentContainer.innerHTML = `
-    <div class="image" style="background-image: url(${image})">
-      
-    </div>
+    <div class="image" style="background-image: url(${image})"></div>
     <div class="content">
       <div class="tabs">
         ${tabs
@@ -58,8 +57,8 @@ function render(data) {
 }
 
 function updateTabContent(tab, title) {
-  for (let tab of tabs) {
-    tab.classList.remove("active");
+  for (let t of tabs) {
+    t.classList.remove("active");
   }
   tab.classList.add("active");
   // (*)
