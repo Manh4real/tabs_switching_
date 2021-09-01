@@ -1,3 +1,5 @@
+import { animate } from "./animate.js";
+
 let data = {
   id: "a001",
   image: "./img/image1.jpg",
@@ -30,7 +32,9 @@ const curContent = document.querySelector(".content .tab-content");
 const tabsContainer = document.querySelector(".content .tabs");
 const tabs = tabsContainer.querySelectorAll(".tab");
 
-updateTabContent(tabs[0], titles[0]);
+window.addEventListener("load", function () {
+  updateTabContent(tabs[0], titles[0]);
+});
 tabsContainer.addEventListener("click", function (e) {
   let title = e.target.dataset.title;
   if (!title) return;
@@ -67,8 +71,13 @@ function updateTabContent(tab, title) {
   // });
 
   // (**)
-  curContent.innerHTML = `<h2>${title}</h2>
-  <p>${data.content[titles.indexOf(title)].owncontent}</p>`;
+  curContent.innerHTML = `<h2 class="content-title">${title}</h2>
+  <p class="para">${data.content[titles.indexOf(title)].owncontent}</p>`;
+
+  animate(
+    curContent.querySelector(".content-title"),
+    curContent.querySelector(".para")
+  );
 }
 
 function switchTab(e, tabTitle) {

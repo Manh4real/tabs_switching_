@@ -83,6 +83,7 @@ body {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  user-select: none;
 }
 .tab.active {
   background: none;
@@ -93,7 +94,7 @@ body {
   padding: 2rem;
   background: whitesmoke;
 }
-.tab-content h2 {
+.tab-content .content-title {
   font-size: 19px;
   color: rgb(80, 80, 80);
   text-transform: capitalize;
